@@ -28,9 +28,39 @@
     #rip2 # NA - not available in nix-on-droid
     tldr
     man
+    ripgrep
+    #ripgrep-all
     bat
+    duf
+    
+    # basic tools
+    procps
+    killall
+    diffutils
+    findutils
+    utillinux
+    tzdata
+    hostname
+    man
+    gnugrep
+    gnupg
+    gnused
+    gnutar
+    bzip2
+    gzip
+    #xz
+    zip
+    unzip
+    
+    coreutils
+    which
+    
+
+    #nerd-fonts.monofur # font for starship
 
   ];
+
+  fonts.fontconfig.enable = true;
 
   home.sessionVariables = {
     #EDITOR = "micro"; # micro added in cli-apps-hm.nix file
