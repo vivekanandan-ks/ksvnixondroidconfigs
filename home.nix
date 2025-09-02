@@ -16,7 +16,7 @@
   imports = [
     #./homeModules/shells.nix
 		#./homeModules/terminal-tools-hm.nix
-		#./homeModules/cli-apps-hm.nix
+		./homeModules/cli-apps-hm.nix
 
   ];
 
@@ -31,12 +31,6 @@
     bat
 
   ];
-
-  home-manager.autoExpire = {
-    enable = true;
-    frequency = "daily";
-    timestamp = "-3 days";
-  };
 
   home.sessionVariables = {
     #EDITOR = "micro"; # micro added in cli-apps-hm.nix file
