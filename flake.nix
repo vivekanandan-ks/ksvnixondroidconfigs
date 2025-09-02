@@ -36,6 +36,8 @@
       nixpkgs,
       home-manager,
       nix-on-droid,
+      nvf,
+      ...
     }@inputs:
     {
 
