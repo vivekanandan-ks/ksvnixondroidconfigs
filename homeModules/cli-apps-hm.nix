@@ -8,7 +8,7 @@
 
 {
 
-  /*#btop
+  #btop
   programs.btop = {
     enable = true;
     package = pkgs.btop;
@@ -29,7 +29,7 @@
     enable = true;
     package = pkgs.fastfetch;
     settings = builtins.fromJSON (builtins.readFile ./hmResources/fastfetch-settings.json);
-  };*/
+  };
 
   # git
   programs.git = {

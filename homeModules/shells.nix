@@ -40,16 +40,17 @@
     nushell = {
       enable = true;
       package = pkgs.nushell;
-      plugins = with pkgs.nushellPlugins; [
+        # plugins option NA in n-o-d hm
+      /*plugins = with pkgs.nushellPlugins; [
         gstat
         #net
         #hcl
         #skim
         #query
-        highlight
+        #highlight
 
-      ];
-      settings = {
+      ];*/
+      /*settings = {
         #show_banner = false;
         highlight_resolved_externals = true;
         completions.external = {
@@ -70,7 +71,7 @@
         #hooks.display_output = "table -e --width 1000 | less -FS";
         #hooks.display_output = "table -e --width 1000 | less -SRX";
         #hooks.display_output = "table -e --width 1000";
-      };
+      };*/
 
       extraConfig = ''
         $env.config.hooks.command_not_found = [
@@ -97,6 +98,7 @@
     };
 
   };
-  home.shell.enableNushellIntegration = true;
+  # the below option doesnt exist for nix-on-droid hm
+  #home.shell.enableNushellIntegration = true;
 
 }

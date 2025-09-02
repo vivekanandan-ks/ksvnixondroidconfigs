@@ -14,8 +14,8 @@
   #nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   imports = [
-    #./homeModules/shells.nix
-		#./homeModules/terminal-tools-hm.nix
+    ./homeModules/shells.nix
+		./homeModules/terminal-tools-hm.nix
 		./homeModules/cli-apps-hm.nix
 
   ];
