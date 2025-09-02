@@ -57,7 +57,7 @@
     
 
     #nerd-fonts.monofur # font for starship
-    ( nerdfonts.override { fonts = [ "Monofur" ]; })
+    #( nerdfonts.override { fonts = [ "Monofur" ]; }) #nerd fonts aren't working in n-o-d
 
   ];
 
