@@ -66,6 +66,7 @@
   home.sessionVariables = {
     #EDITOR = "micro"; # micro added in cli-apps-hm.nix file
     #MANPAGER = "sh -c 'col -b | bat -l man -p '"; # add -p flag to bat for plain style
+    #SHELL = "${pkgs.nushell}/bin/nu"; # this doesnt work in nod
 
   };
 

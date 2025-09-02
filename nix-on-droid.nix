@@ -1,6 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
+  # default shell for nix-on-droid
+  user.shell = "${pkgs.nushell}/bin/nu";
+
   # Simply install just the packages
   environment.packages = with pkgs; [
     # User-facing stuff that you really really want to have
