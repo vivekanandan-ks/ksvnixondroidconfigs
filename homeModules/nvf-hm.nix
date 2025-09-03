@@ -81,7 +81,7 @@ in
             markdown.enable = true;
 
             # Languages that are enabled in the maximal configuration.
-           #bash.enable = true; # changed
+           bash.enable = true; # changed
             clang.enable = isMaximal;
             css.enable = isMaximal;
             html.enable = true; # changed
@@ -92,7 +92,7 @@ in
             go.enable = isMaximal;
             lua.enable = isMaximal;
             zig.enable = isMaximal;
-           #python.enable = true; # changed
+           python.enable = true; # changed
             typst.enable = isMaximal;
             rust = {
               enable = isMaximal;
@@ -102,7 +102,7 @@ in
             # Language modules that are not as common.
             assembly.enable = false;
             astro.enable = false;
-           #nu.enable = true; # changed
+           nu.enable = true; # changed
             csharp.enable = false;
             julia.enable = false;
             vala.enable = false;
@@ -201,8 +201,8 @@ in
           };
 
           dashboard = {
-            #dashboard-nvim.enable = true; # changed
-            #alpha.enable = true; # maximal
+            dashboard-nvim.enable = true; # changed
+            alpha.enable = true; # maximal
           };
 
           notify = {
