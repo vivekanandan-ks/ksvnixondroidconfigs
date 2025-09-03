@@ -40,7 +40,7 @@
       nvf,
       ...
     }@inputs:
-    {
+    {	
 
       nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
         modules = [
@@ -57,7 +57,7 @@
         # list of extra special args for Nix-on-Droid modules
         extraSpecialArgs = {
           # rootPath = ./.;
-          inherit inputs;
+          inherit inputs ;
         };
 
         # set nixpkgs instance, it is recommended to apply `nix-on-droid.overlays.default`
@@ -69,6 +69,13 @@
             # add other overlays
           ];
         };
+
+	/*pkgs-stable = import inputs.nixpkgs-stable {
+          system = "aarch64-linux";
+                                                                          overlays = [                                                      nix-on-droid.overlays.default                                   # add other overlays
+          ];
+        };*/
+
 
         # set path to home-manager flake
         home-manager-path = home-manager.outPath;
