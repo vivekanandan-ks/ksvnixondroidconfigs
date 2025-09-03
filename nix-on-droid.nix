@@ -43,6 +43,9 @@
   # Set your time zone
   time.timeZone = "Asia/Kolkata";
 
+  # terminal font
+  terminal.font = "${pkgs.iosevka}/share/fonts/truetype/iosevka-regular.ttf";
+
   # Configure home-manager
   home-manager = {
     config = ./home.nix;
