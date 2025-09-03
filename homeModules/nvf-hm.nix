@@ -34,8 +34,8 @@ in
         vim = {
           package = pkgs-stable.neovim-unwrapped;
           #package = pkgs.neovim-unwrapped;
-          viAlias = true;
-          vimAlias = true;
+          viAlias = false;
+          vimAlias = false;
           debugMode = {
             enable = false;
             level = 16;
