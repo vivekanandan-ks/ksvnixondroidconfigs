@@ -17,7 +17,7 @@
     ./homeModules/shells.nix
 		./homeModules/terminal-tools-hm.nix
 		./homeModules/cli-apps-hm.nix
-		#./homeModules/nvf-hm.nix
+		./homeModules/nvf-hm.nix
 		./homeModules/micro-editor-hm.nix
 
   ];

@@ -1,9 +1,13 @@
 {
   inputs,
-  pkgs,
+  #pkgs,
   ...
 }:
-
+let
+pkgs-stable = import inputs.nixpkgs-stable {
+	system = "aarch64-linux";
+};
+in
 {
   #importing the nvf module
   imports = [
@@ -14,7 +18,11 @@
   programs.nvf =
     let
       isMaximal = false;
-    in
+      pkgs = import inputs.nixpkgs-stable {
+	system = "aarch64-linux";
+      };   
+
+    in    
     {
       enable = true;
 
@@ -24,8 +32,8 @@
       #the default settings can also be seen here: https://github.com/NotAShelf/nvf/blob/main/configuration.nix
       settings = {
         vim = {
-          #package = pkgs-unstable.neovim-unwrapped;
-          package = pkgs.neovim-unwrapped;
+          package = pkgs-stable.neovim-unwrapped;
+          #package = pkgs.neovim-unwrapped;
           viAlias = true;
           vimAlias = true;
           debugMode = {
@@ -73,7 +81,7 @@
             markdown.enable = true;
 
             # Languages that are enabled in the maximal configuration.
-            #bash.enable = true; # changed # NA in nod
+           #bash.enable = true; # changed
             clang.enable = isMaximal;
             css.enable = isMaximal;
             html.enable = true; # changed
@@ -84,7 +92,7 @@
             go.enable = isMaximal;
             lua.enable = isMaximal;
             zig.enable = isMaximal;
-            #python.enable = true; # changed # basedpyright dependency NA in nod so not working
+           #python.enable = true; # changed
             typst.enable = isMaximal;
             rust = {
               enable = isMaximal;
@@ -94,7 +102,7 @@
             # Language modules that are not as common.
             assembly.enable = false;
             astro.enable = false;
-            #nu.enable = true; # changed
+           #nu.enable = true; # changed
             csharp.enable = false;
             julia.enable = false;
             vala.enable = false;
@@ -207,7 +215,7 @@
 
           utility = {
             ccc.enable = false;
-            #vim-wakatime.enable = true; # changed # NA in nod
+            #vim-wakatime.enable = true; # changed 
             diffview-nvim.enable = true;
             yanky-nvim.enable = false;
             icon-picker.enable = isMaximal;
@@ -299,7 +307,7 @@
       };
     };
   
-  home.packages = with pkgs;[
+  home.packages = with pkgs-stable;[
     ueberzugpp
   ];
 
