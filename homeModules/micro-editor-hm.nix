@@ -10,7 +10,7 @@
   # micro - editor
   programs.micro = {
     enable = true;
-    #package = pkgs.micro;
+    package = pkgs.micro;
     settings = {
       # Refer: zyedidia/micro/blob/master/runtime/help/options.md and https://forum.garudalinux.org/t/mastering-the-micro-text-editor/32889/14
       helpsplit = "vsplit";

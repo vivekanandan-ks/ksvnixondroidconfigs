@@ -27,7 +27,7 @@
     #git
     nano
     #git-town
-    #rip2 # NA - not available in nix-on-droid
+    rip2 # NA - not available in nix-on-droid
     tldr
     man
     ripgrep
