@@ -73,7 +73,7 @@
             markdown.enable = true;
 
             # Languages that are enabled in the maximal configuration.
-            bash.enable = true; # changed
+            #bash.enable = true; # changed # NA in nod
             clang.enable = isMaximal;
             css.enable = isMaximal;
             html.enable = true; # changed
@@ -84,7 +84,7 @@
             go.enable = isMaximal;
             lua.enable = isMaximal;
             zig.enable = isMaximal;
-            python.enable = true; # changed
+            #python.enable = true; # changed # basedpyright dependency NA in nod so not working
             typst.enable = isMaximal;
             rust = {
               enable = isMaximal;
@@ -94,7 +94,7 @@
             # Language modules that are not as common.
             assembly.enable = false;
             astro.enable = false;
-            nu.enable = true; # changed
+            #nu.enable = true; # changed
             csharp.enable = false;
             julia.enable = false;
             vala.enable = false;
@@ -207,7 +207,7 @@
 
           utility = {
             ccc.enable = false;
-            vim-wakatime.enable = true; # changed
+            #vim-wakatime.enable = true; # changed # NA in nod
             diffview-nvim.enable = true;
             yanky-nvim.enable = false;
             icon-picker.enable = isMaximal;

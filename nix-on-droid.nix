@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   # default shell for nix-on-droid
@@ -48,5 +48,12 @@
     config = ./home.nix;
     backupFileExtension = "hm-bak";
     useGlobalPkgs = true;
+    useUserPackages = true;
+    extraSpecialArgs = {
+	inherit inputs ;
+    };
+    sharedModules = [
+	#inputs.nvf.homeManagerModules.default
+    ];
   };
 }
