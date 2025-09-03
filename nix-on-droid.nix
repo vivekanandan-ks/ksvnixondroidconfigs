@@ -1,6 +1,18 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
+
+    android-integration.termux-setup-storage.enable = true;
+    android-integration.am.enable = true;
+    android-integration.termux-open.enable = true;
+    android-integration.termux-open-url.enable = true;
+    android-integration.termux-reload-settings.enable = true;
+    android-integration.termux-wake-lock.enable = true;
+    android-integration.termux-wake-unlock.enable = true;
+    android-integration.xdg-open.enable = true;
+
+
+
   # default shell for nix-on-droid
   user.shell = "${pkgs.nushell}/bin/nu";
 
@@ -44,7 +56,13 @@
   time.timeZone = "Asia/Kolkata";
 
   # terminal font
-  terminal.font = "${pkgs.iosevka}/share/fonts/truetype/iosevka-regular.ttf";
+  #terminal.font = "${pkgs.nerd-fonts.fira-code}/share/fonts/truetype/NerdFonts/FiraCode/FiraCodeNerdFont-Regular.ttf";
+  terminal.font = let
+    jetbrains = pkgs.nerd-fonts.jetbrains-mono; #pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
+    fontPath =
+      "share/fonts/truetype/NerdFonts/JetBrainsMono/JetBrainsMonoNerdFontMono-Regular.ttf";
+  in "${jetbrains}/${fontPath}";
+
 
   # Configure home-manager
   home-manager = {

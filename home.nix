@@ -11,13 +11,15 @@
   home.stateVersion = "24.05";
 
   # insert home-manager config
-  #nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+  nix.registry.nixpkgs.flake = inputs.nixpkgs;
+  nix.registry.n.flake = inputs.nixpkgs; 
 
   imports = [
     ./homeModules/shells.nix
 		./homeModules/terminal-tools-hm.nix
 		./homeModules/cli-apps-hm.nix
-		./homeModules/nvf-hm.nix
+	#./homeModules/nvf-hm.nix
 		./homeModules/micro-editor-hm.nix
 
   ];
@@ -27,7 +29,7 @@
     #git
     nano
     #git-town
-    rip2 # NA - not available in nix-on-droid
+    rip2 # NA - not available in nix-on-droid 24.05
     tldr
     man
     ripgrep
