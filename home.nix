@@ -36,7 +36,8 @@
     #ripgrep-all
     #bat
     duf
-    
+    nh
+    neovim  
     # basic tools
     procps
     killall
