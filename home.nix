@@ -66,6 +66,11 @@
 
   ];
 
+  programs = {
+    command-not-found.enable = true; # this provides the suggestions command by default in nix
+
+  };
+
   fonts.fontconfig.enable = true;
 
   home.sessionVariables = {

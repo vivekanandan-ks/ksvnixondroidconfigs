@@ -78,6 +78,29 @@
           {|cmd| ^command-not-found $cmd | print }  
         ]
 
+        $env.config.hooks.env_change = {
+          PWD: [{|before, after| print $"changing directory from (ansi blue_underline )($before)(ansi reset) to (ansi green_underline)($after)(ansi reset)" }]
+        }
+        
+        # upsert method
+        #$env.config.hooks = ($env.config.hooks | upsert display_output {
+        #  {if (term size).columns >= 100 { table -ed 1 } else { table }
+        #})
+        
+        # merge method
+        #$env.config.hooks = ($env.config.hooks | merge {
+        #  display_output: {if (term size).columns >= 100 { table -ed 1 } else { table }
+        #})
+        # both methods syntax explained
+        #{} | upsert name value
+        #{} | merge { name: value }
+        # ok so in my case:
+        #{} | upsert name { {value} } # {{}} needed because of closure property
+        #{} | merge { name: {value} }
+
+
+
+
         #pay-respects nushell
         
       '';
@@ -99,6 +122,6 @@
 
   };
   # the below option doesnt exist for nix-on-droid hm
-  home.shell.enableNushellIntegration = true;
+  #home.shell.enableNushellIntegration = true;
 
 }
